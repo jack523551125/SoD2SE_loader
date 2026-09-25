@@ -1,0 +1,17 @@
+/artifacts/
+/bin/
+/obj/
+/.vs/
+/.idea/
+__pycache__/
+*.pyc
+*.user
+*.suo
+*.log
+*.pdb
+*.exe
+*.dll
+*.zip
+*.ini
+SoD2SE.GamePath.txt
+SOD2SE_GAME_PATH.txt
