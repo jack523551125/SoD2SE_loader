@@ -4,7 +4,12 @@ param([string]$BuildDirectory = '')
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 if ([string]::IsNullOrWhiteSpace($BuildDirectory)) {
-    $BuildDirectory = Join-Path $PSScriptRoot 'artifacts\bin'
+    $workspace = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
+    if (Test-Path -LiteralPath (Join-Path $workspace 'workspace.toml')) {
+        $BuildDirectory = Join-Path $workspace '.work/products/SoD2SE-Loader'
+    } else {
+        $BuildDirectory = Join-Path $PSScriptRoot '.work/build'
+    }
 }
 $output = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($BuildDirectory)
 & (Join-Path $PSScriptRoot 'build.ps1') -OutputDirectory $output

@@ -15,7 +15,7 @@ Requirements: Windows x64, PowerShell, and the .NET Framework 4.x C# compiler (`
 & .\test.ps1
 ```
 
-The three runtime files appear in `artifacts\bin`:
+The three runtime files appear in `.work\build` for an independent checkout or the workspace's `.work\products\SoD2SE-Loader`:
 
 ```text
 SoD2SE.Loader.exe

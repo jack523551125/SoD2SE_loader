@@ -1,0 +1,25 @@
+schema = 1
+
+[project]
+id = "SoD2SE-Loader"
+name = "SoD2SE-Loader"
+type = "tool"
+version = "0.6.0-preview"
+status = "preview"
+
+[compatibility]
+game_build = "16535856"
+sod2se = ""
+plugin_abi = "managed-existing; native protocols separately versioned"
+
+[release]
+publish = true
+manifest_id = ""
+
+[localization]
+status = "existing implementation; coverage and translation templates require audit"
+
+[source]
+owner = "."
+backend = "loader"
+version_file = "Core/SoD2SE.Core.cs"
