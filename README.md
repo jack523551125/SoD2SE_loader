@@ -13,7 +13,10 @@ Requirements: Windows x64, PowerShell, and the .NET Framework 4.x C# compiler (`
 ```powershell
 & .\build.ps1
 & .\test.ps1
+& .\package.ps1
 ```
+
+`package.ps1` creates a fresh ZIP under `.work` by default. It never overwrites an existing package and does not install or launch the game.
 
 The three runtime files appear in `.work\build` for an independent checkout or the workspace's `.work\products\SoD2SE-Loader`:
 
