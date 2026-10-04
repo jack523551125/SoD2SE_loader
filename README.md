@@ -1,5 +1,7 @@
 # SoD2SE Loader
 
+**Compatibility repository.** The active Rust Loader is now part of [SoD2SE — State of Decay 2 System Extender](https://github.com/jack523551125/SoD2SE), under `Rust/loader`. New native development and issues belong there. This repository is mounted under workspace `Compatibility/SoD2SE-Loader` and preserves the managed Loader/Core/GameApi snapshot and release history for rollback. The instructions below describe that legacy product.
+
 [简体中文说明](README.zh-CN.md)
 
 SoD2SE Loader starts *State of Decay 2*, waits for its game process, and loads compatible SoD2SE DLL plugins. This repository contains the loader and the Core and Game API sources needed to build it. It does **not** include game files, plugin DLLs, the native MCM renderer, or an MO2 game-support plugin.

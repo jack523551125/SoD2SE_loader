@@ -1,5 +1,7 @@
 # SoD2SE-Loader design boundary
 
+The owner authorized consolidation into SoD2SE and moving this repository to workspace Compatibility/SoD2SE-Loader. Rust Loader/Runtime/GameApi are canonical in SoD2SE. This repository retains only the historical managed release boundary below; do not add a competing native implementation.
+
 Product: SoD2SE-Loader. Current status: preview. Canonical source is managed by `Projects/SoD2SE-Loader`. The machine-readable entry is project.toml; version authority is `Projects/SoD2SE-Loader/Core/SoD2SE.Core.cs`.
 
 This is an independent Git repository. Its build/release scripts must work independently of workspace navigation. Do not assume another repository's Core or GameApi snapshot can replace its files.
