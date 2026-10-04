@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible product or workspace defect.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not attach game executables, original or unpacked game resources, saves, private research inputs, third-party checkouts, credentials, or unredacted local paths. Use a private security advisory for suspected vulnerabilities.
+  - type: input
+    id: version
+    attributes:
+      label: Product version or workspace revision
+      placeholder: Version, tag, or commit
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, relevant tool versions, and supported game build if applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: Numbered steps using a clean, non-personal test profile where possible
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Offline checks already run
+      description: Include command and PASS / FAIL / SKIPPED result. Redact usernames and local paths.
+    validations:
+      required: false

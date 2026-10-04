@@ -58,3 +58,28 @@ The loader also supports `--game-exe <path-or-game-directory>`, `--game-args=<ar
 This source snapshot is intended for the fixed game build above. It has been checked by offline tests; it has not been accepted as a new public binary release. The native settings-page integration in the separate MCM plugin still needs in-game acceptance. If you publish binaries, package the three matching files together and verify them with the game and intended MO2 profile before marking a release stable.
 
 No open-source license has been selected for this repository. Add a `LICENSE` file after deciding what rights to grant others; public visibility alone does not grant reuse rights.
+
+
+## Development, offline validation, and packaging
+
+Windows x64, PowerShell 7, and the .NET Framework 4.x C# compiler (`csc.exe`).
+
+From an independent checkout, use the repository-owned entrypoints:
+
+```powershell
+.\build.ps1
+.\test.ps1
+.\package.ps1
+```
+
+
+From the workspace root, `Automation/dev.ps1` dispatches to those same repository-owned entrypoints:
+
+```powershell
+.\Automation\dev.ps1 build SoD2SE-Loader
+.\Automation\dev.ps1 check SoD2SE-Loader
+.\Automation\dev.ps1 test SoD2SE-Loader
+.\Automation\dev.ps1 package SoD2SE-Loader
+```
+
+Run `package.ps1` to generate package inputs below the repository's ignored `.work` directory. Checks never launch or attach to the game. See [RELEASE.md](RELEASE.md) for version authority, tag convention, required acceptance evidence, and release inputs.

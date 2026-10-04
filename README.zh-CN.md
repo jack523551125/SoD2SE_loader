@@ -57,3 +57,28 @@ SoD2SE Loader 负责启动《腐烂国度 2》、等待实际游戏进程，并�
 这份源码已通过离线检查，但尚未作为新的公开二进制版本完成实机验收。独立 MCM 插件的原版设置页也仍需游戏内验收。若要发布可执行文件，应将三个匹配版本的运行文件放在同一发行包，并确认目标游戏和 MO2 配置下的实际运行结果。
 
 目前没有替本仓库指定开源许可证。确定允许他人如何使用、修改和再发布代码后，再添加 `LICENSE` 文件；公开仓库本身不等于授予复用权限。
+
+
+## 开发、离线验证与打包
+
+Windows x64、PowerShell 7 和 .NET Framework 4.x C# 编译器（`csc.exe`）。
+
+独立 checkout 使用本仓库维护的入口：
+
+```powershell
+.\build.ps1
+.\test.ps1
+.\package.ps1
+```
+
+
+在 workspace 根目录，`Automation/dev.ps1` 会调用同一套产品入口：
+
+```powershell
+.\Automation\dev.ps1 build SoD2SE-Loader
+.\Automation\dev.ps1 check SoD2SE-Loader
+.\Automation\dev.ps1 test SoD2SE-Loader
+.\Automation\dev.ps1 package SoD2SE-Loader
+```
+
+构建、测试和打包入口不会启动或附加到游戏；可复现产物写入忽略的 `.work`。 版本来源、tag 约定、验收材料和发布输入见 [RELEASE.md](RELEASE.md)。

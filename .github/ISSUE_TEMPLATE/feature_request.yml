@@ -1,0 +1,29 @@
+name: Feature request
+description: Propose a scoped improvement.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep proposals within this repository's documented product boundary. Do not include game binaries, original or unpacked game assets, saves, private research inputs, third-party checkouts, credentials, or personal data.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What task is blocked or unnecessarily difficult?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest useful change and its user-visible effect.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility and validation
+      description: Note relevant versions, ABI, install paths, accessibility, and an offline test idea.
+    validations:
+      required: false

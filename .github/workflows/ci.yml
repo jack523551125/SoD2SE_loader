@@ -1,0 +1,20 @@
+name: SoD2SE Loader offline checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          path: Projects/SoD2SE-Loader
+          persist-credentials: false
+      - name: Run Loader-owned test entrypoint
+        shell: pwsh
+        working-directory: Projects/SoD2SE-Loader
+        run: .\test.ps1
